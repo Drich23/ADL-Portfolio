@@ -1,4 +1,19 @@
+const gallery = document.querySelector('.gallery');
+
+/* AUTO GENERATE IMAGES */
+const totalImages = 27; // change this if you add more
+
+for (let i = 1; i <= totalImages; i++) {
+  const img = document.createElement('img');
+  img.src = `images/${i}.jpg`;
+  img.dataset.full = `images/${i}.jpg`;
+  img.loading = "lazy";
+  gallery.appendChild(img);
+}
+
+/* SELECT IMAGES AFTER CREATION */
 const images = document.querySelectorAll('.gallery img');
+
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 
@@ -26,10 +41,8 @@ function openLightbox() {
 /* UPDATE IMAGE */
 function updateImage() {
   const fullSrc = images[currentIndex].dataset.full;
-
   lightboxImg.src = fullSrc;
 
-  // preload next/prev
   const next = (currentIndex + 1) % images.length;
   const prev = (currentIndex - 1 + images.length) % images.length;
 
