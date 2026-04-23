@@ -1,7 +1,7 @@
 const gallery = document.querySelector('.gallery');
 
 /* AUTO GENERATE IMAGES */
-const totalImages = 27; // change this if you add more
+const totalImages = 25; // change this if you add more
 
 for (let i = 1; i <= totalImages; i++) {
   const img = document.createElement('img');
